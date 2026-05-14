@@ -1,0 +1,641 @@
+<!DOCTYPE html>
+<html lang="zh-TW">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Landy三毛媽｜毛孩零食職人 把關食品安全</title>
+  <meta name="description" content="Landy三毛媽寵物零食，人食等級食材手工製作，無防腐劑，已完成農委會登記。給毛孩家人般的安心。">
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=DM+Sans:wght@400;500;700&family=Noto+Sans+TC:wght@400;500;700&display=swap" rel="stylesheet">
+  <style>
+    :root {
+      --primary: #8B6914;
+      --primary-light: #C4A35A;
+      --bg: #FFFDF7;
+      --bg-warm: #FFF8F0;
+      --text: #2D2D2D;
+      --text-light: #6B6B6B;
+      --accent: #4A7C59;
+      --accent-light: #E8F5E9;
+    }
+
+    * {
+      margin: 0;
+      padding: 0;
+      box-sizing: border-box;
+    }
+
+    body {
+      font-family: 'Noto Sans TC', sans-serif;
+      font-weight: 400;
+      font-size: 16px;
+      line-height: 1.6;
+      color: var(--text);
+      background-color: var(--bg);
+    }
+
+    h1 {
+      font-size: 32px;
+      font-weight: 700;
+      line-height: 1.3;
+    }
+
+    h2 {
+      font-size: 28px;
+      font-weight: 700;
+      line-height: 1.3;
+    }
+
+    h3 {
+      font-size: 22px;
+      font-weight: 700;
+      line-height: 1.4;
+    }
+
+    .container {
+      max-width: 1200px;
+      margin: 0 auto;
+      padding: 0 20px;
+    }
+
+    /* ===== HERO ===== */
+    .hero {
+      background: linear-gradient(180deg, var(--bg-warm) 0%, var(--bg) 100%);
+      padding: 60px 0 80px;
+      text-align: center;
+    }
+
+    .hero-brand {
+      font-family: 'DM Sans', sans-serif;
+      font-size: 14px;
+      font-weight: 500;
+      color: var(--accent);
+      letter-spacing: 2px;
+      text-transform: uppercase;
+      margin-bottom: 12px;
+    }
+
+    .hero h1 {
+      color: var(--primary);
+      margin-bottom: 16px;
+    }
+
+    .hero-tagline {
+      font-size: 18px;
+      color: var(--text-light);
+      margin-bottom: 32px;
+    }
+
+    .hero-promises {
+      display: flex;
+      justify-content: center;
+      gap: 24px;
+      flex-wrap: wrap;
+      margin-bottom: 40px;
+    }
+
+    .hero-promise {
+      display: flex;
+      align-items: center;
+      gap: 8px;
+      font-size: 15px;
+      color: var(--text);
+    }
+
+    .hero-promise-icon {
+      width: 36px;
+      height: 36px;
+      background: var(--accent-light);
+      border-radius: 50%;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      font-size: 16px;
+    }
+
+    .hero-cta {
+      display: flex;
+      justify-content: center;
+      gap: 16px;
+      flex-wrap: wrap;
+    }
+
+    .btn {
+      display: inline-flex;
+      align-items: center;
+      gap: 8px;
+      padding: 14px 28px;
+      border-radius: 8px;
+      font-size: 15px;
+      font-weight: 500;
+      text-decoration: none;
+      transition: opacity 0.2s ease;
+    }
+
+    .btn:hover {
+      opacity: 0.85;
+    }
+
+    .btn-primary {
+      background: var(--primary);
+      color: #fff;
+    }
+
+    .btn-outline {
+      background: transparent;
+      color: var(--primary);
+      border: 2px solid var(--primary);
+    }
+
+    /* ===== SECTION COMMON ===== */
+    section {
+      padding: 80px 0;
+    }
+
+    .section-header {
+      text-align: center;
+      margin-bottom: 48px;
+    }
+
+    .section-header h2 {
+      color: var(--text);
+      margin-bottom: 12px;
+    }
+
+    .section-header p {
+      color: var(--text-light);
+      font-size: 16px;
+    }
+
+    /* ===== BRAND PROMISE ===== */
+    .promise {
+      background: var(--bg-warm);
+    }
+
+    .promise-grid {
+      display: grid;
+      grid-template-columns: 1fr;
+      gap: 24px;
+    }
+
+    .promise-card {
+      background: #fff;
+      border-radius: 16px;
+      padding: 32px 24px;
+      text-align: center;
+      border: 1px solid rgba(139, 105, 20, 0.1);
+    }
+
+    .promise-icon {
+      width: 64px;
+      height: 64px;
+      background: var(--accent-light);
+      border-radius: 50%;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      margin: 0 auto 20px;
+      font-size: 28px;
+    }
+
+    .promise-card h3 {
+      color: var(--primary);
+      margin-bottom: 12px;
+    }
+
+    .promise-card p {
+      color: var(--text-light);
+      font-size: 15px;
+    }
+
+    /* ===== PRODUCTS ===== */
+    .products {
+      background: var(--bg);
+    }
+
+    .products-grid {
+      display: grid;
+      grid-template-columns: 1fr;
+      gap: 24px;
+    }
+
+    .product-card {
+      background: #fff;
+      border-radius: 16px;
+      overflow: hidden;
+      border: 1px solid rgba(139, 105, 20, 0.1);
+    }
+
+    .product-image {
+      width: 100%;
+      height: 200px;
+      object-fit: cover;
+      background: var(--bg-warm);
+    }
+
+    .product-info {
+      padding: 24px;
+    }
+
+    .product-tag {
+      font-family: 'DM Sans', sans-serif;
+      font-size: 12px;
+      font-weight: 500;
+      color: var(--accent);
+      background: var(--accent-light);
+      padding: 4px 10px;
+      border-radius: 4px;
+      display: inline-block;
+      margin-bottom: 10px;
+    }
+
+    .product-info h3 {
+      color: var(--text);
+      margin-bottom: 8px;
+    }
+
+    .product-info p {
+      color: var(--text-light);
+      font-size: 14px;
+    }
+
+    /* ===== STORY ===== */
+    .story {
+      background: var(--bg-warm);
+    }
+
+    .story-content {
+      max-width: 720px;
+      margin: 0 auto;
+      text-align: center;
+    }
+
+    .story-emoji {
+      font-size: 48px;
+      margin-bottom: 24px;
+    }
+
+    .story h2 {
+      color: var(--primary);
+      margin-bottom: 24px;
+    }
+
+    .story-text {
+      color: var(--text);
+      font-size: 16px;
+      line-height: 1.8;
+      text-align: left;
+    }
+
+    .story-text p {
+      margin-bottom: 20px;
+    }
+
+    .story-signature {
+      margin-top: 32px;
+      color: var(--text-light);
+      font-size: 14px;
+    }
+
+    /* ===== COMMUNITY ===== */
+    .community {
+      background: var(--accent);
+      color: #fff;
+      text-align: center;
+    }
+
+    .community h2 {
+      color: #fff;
+      margin-bottom: 16px;
+    }
+
+    .community-intro {
+      color: rgba(255,255,255,0.85);
+      font-size: 16px;
+      margin-bottom: 32px;
+    }
+
+    .community-stats {
+      display: flex;
+      justify-content: center;
+      gap: 40px;
+      margin-bottom: 32px;
+      flex-wrap: wrap;
+    }
+
+    .stat-item {
+      text-align: center;
+    }
+
+    .stat-number {
+      font-family: 'DM Sans', sans-serif;
+      font-size: 40px;
+      font-weight: 700;
+      color: #fff;
+    }
+
+    .stat-label {
+      font-size: 14px;
+      color: rgba(255,255,255,0.8);
+    }
+
+    .community-cta {
+      display: flex;
+      justify-content: center;
+      gap: 16px;
+      flex-wrap: wrap;
+    }
+
+    .btn-white {
+      background: #fff;
+      color: var(--accent);
+    }
+
+    .btn-white-outline {
+      background: transparent;
+      color: #fff;
+      border: 2px solid #fff;
+    }
+
+    /* ===== CONTACT ===== */
+    .contact {
+      background: var(--bg);
+      text-align: center;
+    }
+
+    .contact-items {
+      display: flex;
+      justify-content: center;
+      gap: 32px;
+      flex-wrap: wrap;
+      margin-bottom: 32px;
+    }
+
+    .contact-item {
+      display: flex;
+      align-items: center;
+      gap: 12px;
+      font-size: 16px;
+      color: var(--text);
+      text-decoration: none;
+    }
+
+    .contact-icon {
+      width: 48px;
+      height: 48px;
+      background: var(--accent-light);
+      border-radius: 50%;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      font-size: 20px;
+    }
+
+    .contact-label {
+      font-size: 13px;
+      color: var(--text-light);
+    }
+
+    .footer {
+      background: var(--bg-warm);
+      padding: 24px 0;
+      text-align: center;
+      font-size: 13px;
+      color: var(--text-light);
+    }
+
+    /* ===== RESPONSIVE ===== */
+    @media (min-width: 768px) {
+      h1 {
+        font-size: 48px;
+      }
+
+      h2 {
+        font-size: 32px;
+      }
+
+      h3 {
+        font-size: 24px;
+      }
+
+      .hero {
+        padding: 100px 0 120px;
+      }
+
+      .hero-tagline {
+        font-size: 20px;
+      }
+
+      section {
+        padding: 100px 0;
+      }
+
+      .promise-grid {
+        grid-template-columns: repeat(3, 1fr);
+      }
+
+      .products-grid {
+        grid-template-columns: repeat(2, 1fr);
+      }
+
+      .products-grid {
+        grid-template-columns: repeat(4, 1fr);
+      }
+
+      .community-stats {
+        gap: 80px;
+      }
+    }
+  </style>
+</head>
+<body>
+
+  <!-- HERO -->
+  <section class="hero">
+    <div class="container">
+      <div class="hero-brand">Landy毛食堂</div>
+      <h1>把關每一口<br>給毛孩家人般的安心</h1>
+      <p class="hero-tagline">人食等級食材・無防腐劑・農委會登記</p>
+      
+      <div class="hero-promises">
+        <div class="hero-promise">
+          <div class="hero-promise-icon">🍖</div>
+          <span>人食等級食材</span>
+        </div>
+        <div class="hero-promise">
+          <div class="hero-promise-icon">🚫</div>
+          <span>無防腐劑</span>
+        </div>
+        <div class="hero-promise">
+          <div class="hero-promise-icon">✅</div>
+          <span>農委會登記</span>
+        </div>
+      </div>
+
+      <div class="hero-cta">
+        <a href="https://instagram.com/landy_eat" target="_blank" class="btn btn-primary">
+          <span>📸</span> 追蹤 IG
+        </a>
+        <a href="https://threads.net/@landy_eat" target="_blank" class="btn btn-outline">
+          <span>💬</span> 加入社群
+        </a>
+      </div>
+    </div>
+  </section>
+
+  <!-- BRAND PROMISE -->
+  <section class="promise">
+    <div class="container">
+      <div class="section-header">
+        <h2>品牌承諾</h2>
+        <p>每一份零食，都是給毛孩家人的愛</p>
+      </div>
+      <div class="promise-grid">
+        <div class="promise-card">
+          <div class="promise-icon">🥩</div>
+          <h3>人食等級食材</h3>
+          <p>堅持使用與家人相同等级的食材，天然、無添加，讓毛孩吃得開心也安心。</p>
+        </div>
+        <div class="promise-card">
+          <div class="promise-icon">🌿</div>
+          <h3>無防腐劑</h3>
+          <p>拒絕任何防腐劑與人工添加物，採用低溫乾燥保鮮，保留食材最原始的營養與風味。</p>
+        </div>
+        <div class="promise-card">
+          <div class="promise-icon">📋</div>
+          <h3>農委會登記</h3>
+          <p>正式完成農委會登記，符合寵物食品法規，用最嚴格的標準把關食品安全。</p>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- PRODUCTS -->
+  <section class="products">
+    <div class="container">
+      <div class="section-header">
+        <h2>明星商品</h2>
+        <p>毛孩最愛的天然零食</p>
+      </div>
+      <div class="products-grid">
+        <div class="product-card">
+          <img src="https://images.unsplash.com/photo-1589924691195-41432c84c161?w=600&q=80" alt="手切肉乾" class="product-image">
+          <div class="product-info">
+            <span class="product-tag">熱銷</span>
+            <h3>手切雞肉乾</h3>
+            <p>採用新鮮土雞肉，手工切片低溫烘乾，保留濃郁肉香。</p>
+          </div>
+        </div>
+        <div class="product-card">
+          <img src="https://images.unsplash.com/photo-1601758125946-6ec2ef64daf8?w=600&q=80" alt="潔牙骨" class="product-image">
+          <div class="product-info">
+            <span class="product-tag">新品</span>
+            <h3>天然潔牙骨</h3>
+            <p>天然牛皮製成，幫助清潔牙齒同時補充蛋白質。</p>
+          </div>
+        </div>
+        <div class="product-card">
+          <img src="https://images.unsplash.com/photo-1568640347023-a616a30bc3bd?w=600&q=80" alt="肉條" class="product-image">
+          <div class="product-info">
+            <span class="product-tag">推薦</span>
+            <h3>鯊魚肉條</h3>
+            <p>低脂高蛋白，軟硬適中，適合各年齡犬種。</p>
+          </div>
+        </div>
+        <div class="product-card">
+          <img src="https://images.unsplash.com/photo-1587300003388-59208cc962cb?w=600&q=80" alt="貓咪零食" class="product-image">
+          <div class="product-info">
+            <span class="product-tag">貓咪最愛</span>
+            <h3>貓咪鮮肉凍乾</h3>
+            <p>新鮮魚肉急速冷凍乾燥，貓咪無法抵擋的鮮甜滋味。</p>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- STORY -->
+  <section class="story">
+    <div class="container">
+      <div class="story-content">
+        <div class="story-emoji">🐕</div>
+        <h2>為什麼開始？</h2>
+        <div class="story-text">
+          <p>身為三毛的媽媽，我總是想給她最好的。看著市售寵物零食的成分標籤，卻發現太多看不懂的化學名詞、防腐劑和人工添加物——我真的無法把這些東西放到三毛的碗裡。</p>
+          <p>所以我決定自己來。從食材挑選到製作過程，每一個環節我都親自把關。我用的是跟家人吃的一樣等级的食材，一樣乾淨的廚房，一樣用心的態度。</p>
+          <p>Landy毛食堂就這樣誕生了。不只是三毛的零食，也是所有毛孩家人的安心選擇。</p>
+        </div>
+        <p class="story-signature">—— Landy三毛媽｜高雄</p>
+      </div>
+    </div>
+  </section>
+
+  <!-- COMMUNITY -->
+  <section class="community">
+    <div class="container">
+      <h2>加入毛孩大家庭</h2>
+      <p class="community-intro">每個月舉辦狗聚，讓毛孩交新朋友，爸媽交流養育心得</p>
+      <div class="community-stats">
+        <div class="stat-item">
+          <div class="stat-number">869</div>
+          <div class="stat-label">社群成員</div>
+        </div>
+        <div class="stat-item">
+          <div class="stat-number">每月</div>
+          <div class="stat-label">狗聚活動</div>
+        </div>
+      </div>
+      <div class="community-cta">
+        <a href="https://instagram.com/landy_eat" target="_blank" class="btn btn-white">
+          <span>📸</span> 追蹤 IG
+        </a>
+        <a href="https://threads.net/@landy_eat" target="_blank" class="btn btn-white-outline">
+          <span>💬</span> 加入 Threads
+        </a>
+      </div>
+    </div>
+  </section>
+
+  <!-- CONTACT -->
+  <section class="contact">
+    <div class="container">
+      <div class="section-header">
+        <h2>聯絡我們</h2>
+        <p>歡迎詢問商品、預訂或有任何問題</p>
+      </div>
+      <div class="contact-items">
+        <a href="https://threads.net/@landy_eat" target="_blank" class="contact-item">
+          <div class="contact-icon">💬</div>
+          <div>
+            <div>@landy_eat</div>
+            <div class="contact-label">Threads</div>
+          </div>
+        </a>
+        <a href="https://instagram.com/landy_eat" target="_blank" class="contact-item">
+          <div class="contact-icon">📸</div>
+          <div>
+            <div>@landy_eat</div>
+            <div class="contact-label">Instagram</div>
+          </div>
+        </a>
+        <div class="contact-item">
+          <div class="contact-icon">📍</div>
+          <div>
+            <div>高雄</div>
+            <div class="contact-label">所在地</div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- FOOTER -->
+  <footer class="footer">
+    <div class="container">
+      <p>© 2026 Landy三毛媽｜Landy毛食堂｜毛孩零食職人</p>
+    </div>
+  </footer>
+
+</body>
+</html>
