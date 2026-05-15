@@ -7,17 +7,18 @@
   <meta name="description" content="Landy三毛媽寵物零食，人食等級食材手工製作，無防腐劑，已完成農委會登記。給毛孩家人般的安心。">
   <link rel="preconnect" href="https://fonts.googleapis.com">
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-  <link href="https://fonts.googleapis.com/css2?family=DM+Sans:wght@400;500;700&family=Noto+Sans+TC:wght@400;500;700&display=swap" rel="stylesheet">
+  <link href="https://fonts.googleapis.com/css2?family=Apartment:wght@400;500;600;700&family=Inter:wght@400;500;600&display=swap" rel="stylesheet">
   <style>
     :root {
       --primary: #8B6914;
       --primary-light: #C4A35A;
-      --bg: #FFFDF7;
-      --bg-warm: #FFF8F0;
-      --text: #2D2D2D;
-      --text-light: #6B6B6B;
+      --bg: #ffffff;
+      --bg-warm: #FFFDF7;
+      --text: #222222;
+      --text-light: #717171;
       --accent: #4A7C59;
-      --accent-light: #E8F5E9;
+      --border: #E8E4DE;
+      --card-radius: 12px;
     }
 
     * {
@@ -27,114 +28,167 @@
     }
 
     body {
-      font-family: 'Noto Sans TC', sans-serif;
-      font-weight: 400;
+      font-family: 'Inter', sans-serif;
       font-size: 16px;
       line-height: 1.6;
       color: var(--text);
       background-color: var(--bg);
     }
 
-    h1 {
-      font-size: 32px;
-      font-weight: 700;
-      line-height: 1.3;
-    }
-
-    h2 {
-      font-size: 28px;
-      font-weight: 700;
-      line-height: 1.3;
-    }
-
-    h3 {
-      font-size: 22px;
-      font-weight: 700;
-      line-height: 1.4;
+    .display-font {
+      font-family: 'Apartment', sans-serif;
     }
 
     .container {
-      max-width: 1200px;
+      max-width: 1120px;
       margin: 0 auto;
-      padding: 0 20px;
+      padding: 0 24px;
     }
 
-    /* ===== HERO ===== */
-    .hero {
-      background: linear-gradient(180deg, rgba(255,248,240,0.85) 0%, rgba(255,248,240,0.95) 100%), url('images/hero-1.jpg') center/cover no-repeat;
-      padding: 60px 0 80px;
-      text-align: center;
+    /* ===== NAVBAR ===== */
+    .navbar {
+      position: sticky;
+      top: 0;
+      background: rgba(255,255,255,0.95);
+      backdrop-filter: blur(10px);
+      border-bottom: 1px solid var(--border);
+      z-index: 100;
+      padding: 16px 0;
     }
 
-    .hero-brand {
-      font-family: 'DM Sans', sans-serif;
-      font-size: 14px;
-      font-weight: 500;
-      color: var(--accent);
-      letter-spacing: 2px;
-      text-transform: uppercase;
-      margin-bottom: 12px;
-    }
-
-    .hero h1 {
-      color: var(--primary);
-      margin-bottom: 16px;
-    }
-
-    .hero-tagline {
-      font-size: 18px;
-      color: var(--text-light);
-      margin-bottom: 32px;
-    }
-
-    .hero-promises {
+    .navbar-inner {
       display: flex;
-      justify-content: center;
-      gap: 24px;
-      flex-wrap: wrap;
-      margin-bottom: 40px;
+      align-items: center;
+      justify-content: space-between;
     }
 
-    .hero-promise {
+    .navbar-brand {
+      font-family: 'Apartment', sans-serif;
+      font-size: 20px;
+      font-weight: 600;
+      color: var(--primary);
+      text-decoration: none;
       display: flex;
       align-items: center;
       gap: 8px;
-      font-size: 15px;
-      color: var(--text);
     }
 
-    .hero-promise-icon {
-      width: 36px;
-      height: 36px;
-      background: var(--accent-light);
-      border-radius: 50%;
+    .navbar-brand-icon {
+      width: 32px;
+      height: 32px;
+      background: var(--primary);
+      border-radius: 8px;
       display: flex;
       align-items: center;
       justify-content: center;
       font-size: 16px;
     }
 
-    .hero-cta {
+    .navbar-links {
       display: flex;
-      justify-content: center;
-      gap: 16px;
-      flex-wrap: wrap;
+      gap: 32px;
     }
 
+    .navbar-links a {
+      font-size: 14px;
+      color: var(--text);
+      text-decoration: none;
+      font-weight: 500;
+      transition: color 0.2s;
+    }
+
+    .navbar-links a:hover {
+      color: var(--primary);
+    }
+
+    /* ===== HERO ===== */
+    .hero {
+      padding: 80px 0 100px;
+      text-align: center;
+      background: var(--bg-warm);
+    }
+
+    .hero-badge {
+      display: inline-flex;
+      align-items: center;
+      gap: 6px;
+      background: #fff;
+      border: 1px solid var(--border);
+      border-radius: 100px;
+      padding: 6px 16px;
+      font-size: 13px;
+      font-weight: 500;
+      color: var(--accent);
+      margin-bottom: 24px;
+    }
+
+    .hero h1 {
+      font-family: 'Apartment', sans-serif;
+      font-size: 56px;
+      font-weight: 600;
+      line-height: 1.15;
+      color: var(--text);
+      margin-bottom: 20px;
+      letter-spacing: -1px;
+    }
+
+    .hero h1 span {
+      color: var(--primary);
+    }
+
+    .hero-tagline {
+      font-size: 18px;
+      color: var(--text-light);
+      max-width: 480px;
+      margin: 0 auto 40px;
+      line-height: 1.7;
+    }
+
+    /* Trust Bar */
+    .trust-bar {
+      display: flex;
+      justify-content: center;
+      gap: 32px;
+      flex-wrap: wrap;
+      margin-bottom: 40px;
+    }
+
+    .trust-item {
+      display: flex;
+      align-items: center;
+      gap: 10px;
+      background: #fff;
+      border: 1px solid var(--border);
+      border-radius: 100px;
+      padding: 10px 20px;
+      font-size: 14px;
+      font-weight: 500;
+    }
+
+    .trust-item-icon {
+      width: 28px;
+      height: 28px;
+      background: var(--bg-warm);
+      border-radius: 50%;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      font-size: 14px;
+    }
+
+    /* ===== BUTTONS ===== */
     .btn {
       display: inline-flex;
       align-items: center;
       gap: 8px;
-      padding: 14px 28px;
+      padding: 14px 24px;
       border-radius: 8px;
       font-size: 15px;
-      font-weight: 500;
+      font-weight: 600;
       text-decoration: none;
-      transition: opacity 0.2s ease;
-    }
-
-    .btn:hover {
-      opacity: 0.85;
+      transition: all 0.2s ease;
+      cursor: pointer;
+      border: none;
     }
 
     .btn-primary {
@@ -142,10 +196,26 @@
       color: #fff;
     }
 
+    .btn-primary:hover {
+      background: #7a5c11;
+      transform: translateY(-1px);
+    }
+
     .btn-outline {
       background: transparent;
-      color: var(--primary);
-      border: 2px solid var(--primary);
+      color: var(--text);
+      border: 1.5px solid var(--border);
+    }
+
+    .btn-outline:hover {
+      border-color: var(--text);
+    }
+
+    .hero-cta {
+      display: flex;
+      justify-content: center;
+      gap: 12px;
+      flex-wrap: wrap;
     }
 
     /* ===== SECTION COMMON ===== */
@@ -153,60 +223,83 @@
       padding: 80px 0;
     }
 
+    .section-label {
+      font-size: 12px;
+      font-weight: 600;
+      letter-spacing: 1px;
+      text-transform: uppercase;
+      color: var(--primary);
+      margin-bottom: 8px;
+    }
+
+    .section-title {
+      font-family: 'Apartment', sans-serif;
+      font-size: 36px;
+      font-weight: 600;
+      color: var(--text);
+      margin-bottom: 16px;
+      letter-spacing: -0.5px;
+    }
+
+    .section-subtitle {
+      font-size: 16px;
+      color: var(--text-light);
+      max-width: 520px;
+      margin: 0 auto;
+      line-height: 1.7;
+    }
+
     .section-header {
       text-align: center;
       margin-bottom: 48px;
     }
 
-    .section-header h2 {
-      color: var(--text);
-      margin-bottom: 12px;
-    }
-
-    .section-header p {
-      color: var(--text-light);
-      font-size: 16px;
-    }
-
-    /* ===== BRAND PROMISE ===== */
-    .promise {
+    /* ===== TRUST BADGES ===== */
+    .trust-badges {
       background: var(--bg-warm);
+      padding: 60px 0;
     }
 
-    .promise-grid {
+    .trust-grid {
       display: grid;
       grid-template-columns: 1fr;
-      gap: 24px;
+      gap: 16px;
     }
 
-    .promise-card {
+    .trust-card {
       background: #fff;
-      border-radius: 16px;
-      padding: 32px 24px;
-      text-align: center;
-      border: 1px solid rgba(139, 105, 20, 0.1);
+      border-radius: var(--card-radius);
+      padding: 24px;
+      border: 1px solid var(--border);
+      display: flex;
+      align-items: flex-start;
+      gap: 16px;
     }
 
-    .promise-icon {
-      width: 64px;
-      height: 64px;
-      background: var(--accent-light);
-      border-radius: 50%;
+    .trust-card-icon {
+      width: 48px;
+      height: 48px;
+      min-width: 48px;
+      background: var(--bg-warm);
+      border-radius: 10px;
       display: flex;
       align-items: center;
       justify-content: center;
-      margin: 0 auto 20px;
-      font-size: 28px;
+      font-size: 22px;
     }
 
-    .promise-card h3 {
-      color: var(--primary);
-      margin-bottom: 12px;
+    .trust-card h3 {
+      font-family: 'Apartment', sans-serif;
+      font-size: 18px;
+      font-weight: 600;
+      color: var(--text);
+      margin-bottom: 6px;
     }
 
-    .promise-card p {
+    .trust-card p {
+      font-size: 14px;
       color: var(--text-light);
-      font-size: 15px;
+      line-height: 1.6;
     }
 
     /* ===== PRODUCTS ===== */
@@ -222,28 +315,35 @@
 
     .product-card {
       background: #fff;
-      border-radius: 16px;
+      border-radius: var(--card-radius);
       overflow: hidden;
-      border: 1px solid rgba(139, 105, 20, 0.1);
+      border: 1px solid var(--border);
+      transition: box-shadow 0.2s ease, transform 0.2s ease;
+    }
+
+    .product-card:hover {
+      box-shadow: 0 8px 30px rgba(0,0,0,0.08);
+      transform: translateY(-2px);
     }
 
     .product-image {
       width: 100%;
-      height: 200px;
+      height: 220px;
       object-fit: cover;
       background: var(--bg-warm);
     }
 
     .product-info {
-      padding: 24px;
+      padding: 20px;
     }
 
     .product-tag {
-      font-family: 'DM Sans', sans-serif;
-      font-size: 12px;
-      font-weight: 500;
+      font-size: 11px;
+      font-weight: 600;
+      text-transform: uppercase;
+      letter-spacing: 0.5px;
       color: var(--accent);
-      background: var(--accent-light);
+      background: #E8F5E9;
       padding: 4px 10px;
       border-radius: 4px;
       display: inline-block;
@@ -251,13 +351,17 @@
     }
 
     .product-info h3 {
+      font-family: 'Apartment', sans-serif;
+      font-size: 20px;
+      font-weight: 600;
       color: var(--text);
       margin-bottom: 8px;
     }
 
     .product-info p {
-      color: var(--text-light);
       font-size: 14px;
+      color: var(--text-light);
+      line-height: 1.6;
     }
 
     /* ===== STORY ===== */
@@ -271,14 +375,13 @@
       text-align: center;
     }
 
-    .story-emoji {
-      font-size: 48px;
-      margin-bottom: 24px;
-    }
-
-    .story h2 {
+    .story-quote {
+      font-family: 'Apartment', sans-serif;
+      font-size: 28px;
+      font-weight: 500;
       color: var(--primary);
-      margin-bottom: 24px;
+      line-height: 1.5;
+      margin-bottom: 32px;
     }
 
     .story-text {
@@ -296,66 +399,49 @@
       margin-top: 32px;
       color: var(--text-light);
       font-size: 14px;
+      text-align: right;
     }
 
-    /* ===== COMMUNITY ===== */
-    .community {
-      background: var(--accent);
-      color: #fff;
+    /* ===== CTA BANNER ===== */
+    .cta-banner {
+      background: var(--primary);
+      padding: 64px 0;
       text-align: center;
-    }
-
-    .community h2 {
       color: #fff;
-      margin-bottom: 16px;
     }
 
-    .community-intro {
-      color: rgba(255,255,255,0.85);
+    .cta-banner h2 {
+      font-family: 'Apartment', sans-serif;
+      font-size: 32px;
+      font-weight: 600;
+      color: #fff;
+      margin-bottom: 12px;
+    }
+
+    .cta-banner p {
       font-size: 16px;
-      margin-bottom: 32px;
-    }
-
-    .community-stats {
-      display: flex;
-      justify-content: center;
-      gap: 40px;
-      margin-bottom: 32px;
-      flex-wrap: wrap;
-    }
-
-    .stat-item {
-      text-align: center;
-    }
-
-    .stat-number {
-      font-family: 'DM Sans', sans-serif;
-      font-size: 40px;
-      font-weight: 700;
-      color: #fff;
-    }
-
-    .stat-label {
-      font-size: 14px;
-      color: rgba(255,255,255,0.8);
-    }
-
-    .community-cta {
-      display: flex;
-      justify-content: center;
-      gap: 16px;
-      flex-wrap: wrap;
+      color: rgba(255,255,255,0.85);
+      margin-bottom: 28px;
     }
 
     .btn-white {
       background: #fff;
-      color: var(--accent);
+      color: var(--primary);
+      font-weight: 600;
     }
 
-    .btn-white-outline {
+    .btn-white:hover {
+      background: var(--bg-warm);
+    }
+
+    .btn-ghost-white {
       background: transparent;
       color: #fff;
-      border: 2px solid #fff;
+      border: 2px solid rgba(255,255,255,0.5);
+    }
+
+    .btn-ghost-white:hover {
+      border-color: #fff;
     }
 
     /* ===== CONTACT ===== */
@@ -364,163 +450,233 @@
       text-align: center;
     }
 
-    .contact-items {
-      display: flex;
-      justify-content: center;
-      gap: 32px;
-      flex-wrap: wrap;
-      margin-bottom: 32px;
+    .contact-grid {
+      display: grid;
+      grid-template-columns: 1fr;
+      gap: 16px;
+      max-width: 600px;
+      margin: 0 auto;
     }
 
-    .contact-item {
+    .contact-card {
       display: flex;
       align-items: center;
-      gap: 12px;
-      font-size: 16px;
-      color: var(--text);
+      gap: 16px;
+      background: #fff;
+      border: 1px solid var(--border);
+      border-radius: var(--card-radius);
+      padding: 20px 24px;
       text-decoration: none;
+      color: var(--text);
+      transition: box-shadow 0.2s;
+    }
+
+    .contact-card:hover {
+      box-shadow: 0 4px 20px rgba(0,0,0,0.06);
     }
 
     .contact-icon {
-      width: 48px;
-      height: 48px;
-      background: var(--accent-light);
-      border-radius: 50%;
+      width: 44px;
+      height: 44px;
+      min-width: 44px;
+      background: var(--bg-warm);
+      border-radius: 10px;
       display: flex;
       align-items: center;
       justify-content: center;
-      font-size: 20px;
+      font-size: 18px;
     }
 
     .contact-label {
-      font-size: 13px;
+      font-size: 12px;
       color: var(--text-light);
+      margin-bottom: 2px;
     }
 
+    .contact-value {
+      font-size: 15px;
+      font-weight: 500;
+    }
+
+    /* ===== FOOTER ===== */
     .footer {
       background: var(--bg-warm);
-      padding: 24px 0;
+      border-top: 1px solid var(--border);
+      padding: 32px 0;
       text-align: center;
+    }
+
+    .footer-brand {
+      font-family: 'Apartment', sans-serif;
+      font-size: 18px;
+      font-weight: 600;
+      color: var(--primary);
+      margin-bottom: 8px;
+    }
+
+    .footer p {
       font-size: 13px;
       color: var(--text-light);
     }
 
     /* ===== RESPONSIVE ===== */
     @media (min-width: 768px) {
-      h1 {
-        font-size: 48px;
+      .hero h1 {
+        font-size: 64px;
       }
 
-      h2 {
-        font-size: 32px;
+      .section-title {
+        font-size: 42px;
       }
 
-      h3 {
-        font-size: 24px;
-      }
-
-      .hero {
-        padding: 100px 0 120px;
-      }
-
-      .hero-tagline {
-        font-size: 20px;
-      }
-
-      section {
-        padding: 100px 0;
-      }
-
-      .promise-grid {
+      .trust-grid {
         grid-template-columns: repeat(3, 1fr);
-      }
-
-      .products-grid {
-        grid-template-columns: repeat(2, 1fr);
       }
 
       .products-grid {
         grid-template-columns: repeat(4, 1fr);
       }
 
-      .community-stats {
-        gap: 80px;
+      .contact-grid {
+        grid-template-columns: repeat(3, 1fr);
+      }
+
+      section {
+        padding: 100px 0;
+      }
+    }
+
+    @media (max-width: 767px) {
+      .navbar-links {
+        display: none;
+      }
+
+      .hero h1 {
+        font-size: 36px;
+      }
+
+      .hero {
+        padding: 60px 0 80px;
+      }
+
+      .trust-bar {
+        gap: 12px;
+      }
+
+      .trust-item {
+        padding: 8px 14px;
+        font-size: 13px;
       }
     }
   </style>
 </head>
 <body>
 
+  <!-- NAVBAR -->
+  <nav class="navbar">
+    <div class="container navbar-inner">
+      <a href="#" class="navbar-brand">
+        <div class="navbar-brand-icon">🐾</div>
+        Landy三毛媽
+      </a>
+      <div class="navbar-links">
+        <a href="#trust">品牌承諾</a>
+        <a href="#products">明星商品</a>
+        <a href="#story">關於我們</a>
+        <a href="#contact">聯絡方式</a>
+      </div>
+    </div>
+  </nav>
+
   <!-- HERO -->
   <section class="hero">
     <div class="container">
-      <div class="hero-brand">Landy毛食堂</div>
-      <h1>把關每一口<br>給毛孩家人般的安心</h1>
-      <p class="hero-tagline">人食等級食材・無防腐劑・農委會登記</p>
-      
-      <div class="hero-promises">
-        <div class="hero-promise">
-          <div class="hero-promise-icon">🍖</div>
+      <div class="hero-badge">
+        <span>✓</span> 農委會登記合格的毛孩零食
+      </div>
+      <h1 class="display-font">
+        把關每一口<br><span>給毛孩家人般的安心</span>
+      </h1>
+      <p class="hero-tagline">
+        人食等級食材・無防腐劑・手工製作<br>
+        因為牠們是家人，所以我們堅持最高標準
+      </p>
+
+      <div class="trust-bar">
+        <div class="trust-item">
+          <div class="trust-item-icon">🍖</div>
           <span>人食等級食材</span>
         </div>
-        <div class="hero-promise">
-          <div class="hero-promise-icon">🚫</div>
+        <div class="trust-item">
+          <div class="trust-item-icon">🚫</div>
           <span>無防腐劑</span>
         </div>
-        <div class="hero-promise">
-          <div class="hero-promise-icon">✅</div>
+        <div class="trust-item">
+          <div class="trust-item-icon">✅</div>
           <span>農委會登記</span>
+        </div>
+        <div class="trust-item">
+          <div class="trust-item-icon">🧊</div>
+          <span>低溫保鮮</span>
         </div>
       </div>
 
       <div class="hero-cta">
         <a href="https://instagram.com/landy_eat" target="_blank" class="btn btn-primary">
-          <span>📸</span> 追蹤 IG
+          📸 追蹤 IG
         </a>
         <a href="https://threads.net/@landy_eat" target="_blank" class="btn btn-outline">
-          <span>💬</span> 加入社群
+          💬 加入社群
         </a>
       </div>
     </div>
   </section>
 
-  <!-- BRAND PROMISE -->
-  <section class="promise">
+  <!-- TRUST BADGES -->
+  <section class="trust-badges" id="trust">
     <div class="container">
       <div class="section-header">
-        <h2>品牌承諾</h2>
-        <p>每一份零食，都是給毛孩家人的愛</p>
+        <p class="section-label">為什麼選擇我們</p>
+        <h2 class="section-title">品牌承諾</h2>
+        <p class="section-subtitle">每一份零食，都是給毛孩家人的愛</p>
       </div>
-      <div class="promise-grid">
-        <div class="promise-card">
-          <div class="promise-icon">🥩</div>
-          <h3>人食等級食材</h3>
-          <p>堅持使用與家人相同等级的食材，天然、無添加，讓毛孩吃得開心也安心。</p>
+      <div class="trust-grid">
+        <div class="trust-card">
+          <div class="trust-card-icon">🥩</div>
+          <div>
+            <h3>人食等級食材</h3>
+            <p>堅持使用與家人相同等级的食材，天然、無添加，讓毛孩吃得開心也安心。</p>
+          </div>
         </div>
-        <div class="promise-card">
-          <div class="promise-icon">🌿</div>
-          <h3>無防腐劑</h3>
-          <p>拒絕任何防腐劑與人工添加物，採用低溫乾燥保鮮，保留食材最原始的營養與風味。</p>
+        <div class="trust-card">
+          <div class="trust-card-icon">🌿</div>
+          <div>
+            <h3>無防腐劑</h3>
+            <p>拒絕任何防腐劑與人工添加物，採用低溫乾燥保鮮，保留食材最原始的營養與風味。</p>
+          </div>
         </div>
-        <div class="promise-card">
-          <div class="promise-icon">📋</div>
-          <h3>農委會登記</h3>
-          <p>正式完成農委會登記，符合寵物食品法規，用最嚴格的標準把關食品安全。</p>
+        <div class="trust-card">
+          <div class="trust-card-icon">📋</div>
+          <div>
+            <h3>農委會登記</h3>
+            <p>正式完成農委會登記，符合寵物食品法規，用最嚴格的標準把關食品安全。</p>
+          </div>
         </div>
       </div>
     </div>
   </section>
 
   <!-- PRODUCTS -->
-  <section class="products">
+  <section class="products" id="products">
     <div class="container">
       <div class="section-header">
-        <h2>明星商品</h2>
-        <p>毛孩最愛的天然零食</p>
+        <p class="section-label">毛孩最愛</p>
+        <h2 class="section-title">明星商品</h2>
+        <p class="section-subtitle">天然、無添加的安心零食</p>
       </div>
       <div class="products-grid">
         <div class="product-card">
-          <img src="images/product-treats.jpg" alt="手工寵物零食" class="product-image" onerror="this.style.display='none'">
+          <img src="images/product-treats.jpg" alt="手切雞肉乾" class="product-image" onerror="this.style.display='none'">
           <div class="product-info">
             <span class="product-tag">熱銷</span>
             <h3>手切雞肉乾</h3>
@@ -528,7 +684,7 @@
           </div>
         </div>
         <div class="product-card">
-          <img src="images/product-happy.jpg" alt="快樂毛孩" class="product-image" onerror="this.style.display='none'">
+          <img src="images/product-happy.jpg" alt="天然潔牙骨" class="product-image" onerror="this.style.display='none'">
           <div class="product-info">
             <span class="product-tag">新品</span>
             <h3>天然潔牙骨</h3>
@@ -536,7 +692,7 @@
           </div>
         </div>
         <div class="product-card">
-          <img src="images/lifestyle-1.jpg" alt="毛孩零食" class="product-image" onerror="this.style.display='none'">
+          <img src="images/lifestyle-1.jpg" alt="鯊魚肉條" class="product-image" onerror="this.style.display='none'">
           <div class="product-info">
             <span class="product-tag">推薦</span>
             <h3>鯊魚肉條</h3>
@@ -544,7 +700,7 @@
           </div>
         </div>
         <div class="product-card">
-          <img src="images/hero-1.jpg" alt="Landy三毛媽寵物零食" class="product-image" onerror="this.style.display='none'">
+          <img src="images/hero-1.jpg" alt="貓咪鮮肉凍乾" class="product-image" onerror="this.style.display='none'">
           <div class="product-info">
             <span class="product-tag">貓咪最愛</span>
             <h3>貓咪鮮肉凍乾</h3>
@@ -556,74 +712,68 @@
   </section>
 
   <!-- STORY -->
-  <section class="story">
+  <section class="story" id="story">
     <div class="container">
       <div class="story-content">
-        <div class="story-emoji">🐕</div>
-        <h2>為什麼開始？</h2>
+        <p class="section-label">關於我們</p>
+        <h2 class="section-title">為什麼開始？</h2>
+        <blockquote class="story-quote">
+          "因為牠們是家人，所以我無法妥協"
+        </blockquote>
         <div class="story-text">
           <p>身為三毛的媽媽，我總是想給她最好的。看著市售寵物零食的成分標籤，卻發現太多看不懂的化學名詞、防腐劑和人工添加物——我真的無法把這些東西放到三毛的碗裡。</p>
-          <p>所以我決定自己來。從食材挑選到製作過程，每一個環節我都親自把關。我用的是跟家人吃的一樣等级的食材，一樣乾淨的廚房，一樣用心的態度。</p>
-          <p>Landy毛食堂就這樣誕生了。不只是三毛的零食，也是所有毛孩家人的安心選擇。</p>
+          <p>所以我決定自己來。從食材挑選到製作過程，每一個環節我都親自把關。我用的是跟家人吃的一樣等級的食材，一樣乾淨的廚房，一樣用心的態度。</p>
+          <p>Landy三毛媽就這樣誕生了。不只是三毛的零食，也是所有毛孩家人的安心選擇。</p>
         </div>
         <p class="story-signature">—— Landy三毛媽｜高雄</p>
       </div>
     </div>
   </section>
 
-  <!-- COMMUNITY -->
-  <section class="community">
+  <!-- CTA BANNER -->
+  <section class="cta-banner">
     <div class="container">
       <h2>加入毛孩大家庭</h2>
-      <p class="community-intro">每個月舉辦狗聚，讓毛孩交新朋友，爸媽交流養育心得</p>
-      <div class="community-stats">
-        <div class="stat-item">
-          <div class="stat-number">869</div>
-          <div class="stat-label">社群成員</div>
-        </div>
-        <div class="stat-item">
-          <div class="stat-number">每月</div>
-          <div class="stat-label">狗聚活動</div>
-        </div>
-      </div>
-      <div class="community-cta">
+      <p>每個月舉辦狗聚，讓毛孩交新朋友，爸媽交流養育心得</p>
+      <div class="hero-cta">
         <a href="https://instagram.com/landy_eat" target="_blank" class="btn btn-white">
-          <span>📸</span> 追蹤 IG
+          📸 追蹤 IG
         </a>
-        <a href="https://threads.net/@landy_eat" target="_blank" class="btn btn-white-outline">
-          <span>💬</span> 加入 Threads
+        <a href="https://threads.net/@landy_eat" target="_blank" class="btn btn-ghost-white">
+          💬 加入 Threads
         </a>
       </div>
     </div>
   </section>
 
   <!-- CONTACT -->
-  <section class="contact">
+  <section class="contact" id="contact">
     <div class="container">
       <div class="section-header">
-        <h2>聯絡我們</h2>
-        <p>歡迎詢問商品、預訂或有任何問題</p>
+        <p class="section-label">聯絡我們</p>
+        <h2 class="section-title">歡迎詢問</h2>
+        <p class="section-subtitle">任何商品、預訂或問題，都歡迎聊聊</p>
       </div>
-      <div class="contact-items">
-        <a href="https://threads.net/@landy_eat" target="_blank" class="contact-item">
+      <div class="contact-grid">
+        <a href="https://threads.net/@landy_eat" target="_blank" class="contact-card">
           <div class="contact-icon">💬</div>
           <div>
-            <div>@landy_eat</div>
             <div class="contact-label">Threads</div>
+            <div class="contact-value">@landy_eat</div>
           </div>
         </a>
-        <a href="https://instagram.com/landy_eat" target="_blank" class="contact-item">
+        <a href="https://instagram.com/landy_eat" target="_blank" class="contact-card">
           <div class="contact-icon">📸</div>
           <div>
-            <div>@landy_eat</div>
             <div class="contact-label">Instagram</div>
+            <div class="contact-value">@landy_eat</div>
           </div>
         </a>
-        <div class="contact-item">
+        <div class="contact-card">
           <div class="contact-icon">📍</div>
           <div>
-            <div>高雄</div>
             <div class="contact-label">所在地</div>
+            <div class="contact-value">高雄</div>
           </div>
         </div>
       </div>
@@ -633,7 +783,8 @@
   <!-- FOOTER -->
   <footer class="footer">
     <div class="container">
-      <p>© 2026 Landy三毛媽｜Landy毛食堂｜毛孩零食職人</p>
+      <div class="footer-brand">🐾 Landy三毛媽</div>
+      <p>© 2026 Landy三毛媽｜毛孩零食職人｜人食等級食材</p>
     </div>
   </footer>
 
